@@ -1,13 +1,23 @@
 // Hide the chat container on page load
 document.getElementById("chat-container").style.display = "none";
+
 document.getElementById("user-input").addEventListener("keydown", function(event) {
   if (event.keyCode === 13) { // Check if Enter key is pressed
     event.preventDefault(); // Prevent default behavior (e.g., new line in textarea)
     sendMessage(); // Call sendMessage function
   }
 });
+
 document.querySelector('.chat-toggle').addEventListener('click', function() {
   document.getElementById('user-input').focus();
+});
+
+document.addEventListener('click', function(event) {
+  var chatContainer = document.getElementById('chat-container');
+  var chatToggle = document.querySelector('.chat-toggle');
+  if (!chatContainer.contains(event.target) && !chatToggle.contains(event.target)) {
+    chatContainer.style.display = 'none';
+  }
 });
 
 function sendMessage() {
