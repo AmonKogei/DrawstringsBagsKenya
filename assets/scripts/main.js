@@ -44,7 +44,11 @@ function openModal(imageSrc, title, price) {
   document.getElementById('modal').style.display = 'block';
   document.getElementById('modal-image').src = imageSrc;
   document.getElementById('modal-title').innerText = title;
-  document.getElementById('modal-price').innerText = `KES${price.toFixed(2)}`;
+  document.getElementById('modal-price').innerText = `KES ${price.toFixed(2)}`;
+
+  // Reset form and show product info
+  document.getElementById('product-info').style.display = 'block';
+  document.getElementById('user-form').style.display = 'none';
 
   // Blur background
   document.querySelector('.products').style.filter = 'blur(5px)';
@@ -57,15 +61,36 @@ function closeModal() {
   document.querySelector('.products').style.filter = 'none';
 }
 
-// Close the modal if clicked outside of the modal content
-window.onclick = function(event) {
-  if (event.target === document.getElementById('modal')) {
-      closeModal();
-  }
+// Function to show the form and hide product info
+function showForm() {
+  const quantity = document.getElementById('quantity').value;
+  const productTitle = document.getElementById('modal-title').innerText;
+  const productPrice = parseFloat(document.getElementById('modal-price').innerText.replace('KES ', ''));
+
+  document.getElementById('product-info').style.display = 'none';
+  document.getElementById('user-form').style.display = 'block';
+  document.getElementById('product-summary').innerText = `You have selected ${quantity} pieces of ${productTitle} at KES ${productPrice.toFixed(2)} each. Total: KES ${(productPrice * quantity).toFixed(2)}`;
 }
 
+// Handle form submission
+document.getElementById('details-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const userName = document.getElementById('user-name').value;
+  const userPhone = document.getElementById('user-phone').value;
+  const productTitle = document.getElementById('modal-title').innerText;
+  const quantity = document.getElementById('quantity').value;
+  const productPrice = parseFloat(document.getElementById('modal-price').innerText.replace('KES ', ''));
+  const totalPrice = productPrice * quantity;
+
+  const whatsappMessage = `My name is ${userName}, my phone number is ${userPhone} and I am interested in ${quantity} pieces of ${productTitle} at KES ${productPrice.toFixed(2)} each. Total amount: KES ${totalPrice.toFixed(2)}.`;
+  
+  const whatsappURL = `https://wa.me/254706326482?text=${encodeURIComponent(whatsappMessage)}`;
+  window.open(whatsappURL, '_blank');
+});
+
+
 document.getElementById('contact-button').addEventListener('click', function() {
-  const phoneNumber = '254706890007'; // Replace with your phone number
+  const phoneNumber = '254706326482'; // Replace with your phone number
   const message = 'Hello, tell me more about drawstring bags';
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   window.location.href = whatsappUrl;
