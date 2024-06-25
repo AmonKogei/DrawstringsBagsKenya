@@ -23,10 +23,20 @@ function openModal(imageSrc, title, price) {
   document.getElementById('modal-title').innerText = title;
   document.getElementById('modal-price').innerText = `KES ${price.toFixed(2)}`;
 
+  // Set the minimum value for the quantity input
+  var quantityInput = document.getElementById('quantity');
+  quantityInput.min = 10;
+  quantityInput.value = 10;
+
   // Blur background
   document.querySelector('.products').style.filter = 'blur(5px)';
 }
-
+//Prevents values less than 10 in the input field
+document.getElementById('quantity').addEventListener('input', function() {
+  if (this.value < 10) {
+      this.value = 10;
+  }
+});
 // Function to close the modal
 function closeModal() {
   document.getElementById('modal').style.display = 'none';
