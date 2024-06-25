@@ -1,55 +1,33 @@
+// Function to show a specific page
 function showPage(pageName) {
-    // Hide all pages
-    var pages = document.querySelectorAll('.page');
-    pages.forEach(function(page) {
+  var pages = document.querySelectorAll('.page');
+  pages.forEach(function(page) {
       page.style.display = 'none';
-    });
-  
-    // Show the selected page
-    var selectedPage = document.getElementById(pageName);
-    if (selectedPage) {
+  });
+
+  var selectedPage = document.getElementById(pageName);
+  if (selectedPage) {
       selectedPage.style.display = 'block';
-    } else {
+  } else {
       console.error('Page not found:', pageName);
-    }
   }
+}
+
 // Show the home page by default
 showPage('page1');
 
-window.onload = function() {
-  const container1 = document.getElementById('container1');
-  const container2 = document.getElementById('container2');
-
-  container1.style.display = 'block'; // Show the first container initially
-
-  const toggleContainers = () => {
-      if (container1.style.display === 'block') {
-          container1.style.display = 'none';
-          container2.style.display = 'block';
-      } else {
-          container1.style.display = 'block';
-          container2.style.display = 'none';
-      }
-  };
-
-  setInterval(toggleContainers, 15000); // 15 seconds
-
-  container1.addEventListener('click', toggleContainers);
-  container2.addEventListener('click', toggleContainers);
-};
-
-// scripts.js
-
+// Function to open modal with specific image, title, and price
 function openModal(imageSrc, title, price) {
   document.getElementById('modal').style.display = 'block';
   document.getElementById('modal-image').src = imageSrc;
   document.getElementById('modal-title').innerText = title;
-  document.getElementById('modal-price').innerText = `KES${price.toFixed(2)}`;
+  document.getElementById('modal-price').innerText = `KES ${price.toFixed(2)}`;
 
   // Blur background
   document.querySelector('.products').style.filter = 'blur(5px)';
 }
 
+// Function to close the modal
 function closeModal() {
   document.getElementById('modal').style.display = 'none';
 
@@ -70,3 +48,15 @@ document.getElementById('contact-button').addEventListener('click', function() {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   window.location.href = whatsappUrl;
 });
+// to track social media clicks on these links for analytics purposes
+document.addEventListener('DOMContentLoaded', () => {
+  const socialIcons = document.querySelectorAll('.social-icon');
+
+  socialIcons.forEach(icon => {
+      icon.addEventListener('click', () => {
+          console.log(`Navigating to: ${icon.href}`);
+          // You can add more code here for analytics or other purposes
+      });
+  });
+});
+

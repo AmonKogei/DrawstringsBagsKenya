@@ -65,8 +65,8 @@
     <!-- Content for Page 2 (Products Page) -->
     <div id="page2" class="page">
       <div class="products">
-        <div class="gallery" onclick="openModal('assets/images/drawstringbagproduct5.jpg','Non-woven material Drawstring bag', 120)">
-            <div class="content">
+        <div class="gallery">
+            <div class="content" onclick="openModal('assets/images/drawstringbagproduct5.jpg','Non-woven material Drawstring bag', 120)">
                 <img src="assets/images/drawstringbagproduct5.jpg" alt="Non-woven material Drawstring bag">
                 <h3>Non-woven material</h3>
                 <p>Durable non-woven drawstring bag for everyday use.</p>
@@ -80,7 +80,6 @@
                 </ul>
                 <button class="buy-1">Buy now</button>
             </div>
-    
             <div class="content" onclick="openModal('assets/images/drawstringbagproduct6.jpg' ,'Mesh material Drawstring bag', 140)">
                 <img src="assets/images/drawstringbagproduct6.jpg" alt="Mesh material Drawstring bag">
                 <h3>Mesh material</h3>
@@ -95,7 +94,6 @@
                 </ul>
                 <button class="buy-2">Buy now</button>
             </div>
-    
             <div class="content" onclick="openModal('assets/images/drawstringbagproduct3.jpg', 'Customized Design Drawstring bag', 200)">
                 <img src="assets/images/drawstringbagproduct3.jpg" alt="Customized Design Drawstring bag">
                 <h3>Customized Design</h3>
@@ -110,7 +108,6 @@
                 </ul>
                 <button class="buy-3">Buy now</button>
             </div>
-    
             <div class="content" onclick="openModal('assets/images/drawstringbagproduct2.jpg', 'Polyester material Drawstring bag', 100)">
                 <img src="assets/images/drawstringbagproduct2.jpg" alt="Polyester material Drawstring bag">
                 <h3>Polyester material</h3>
@@ -125,7 +122,6 @@
                 </ul>
                 <button class="buy-4">Buy now</button>
             </div>
-    
             <div class="content" onclick="openModal('assets/images/drawstringbagproduct1.jpg', 'Cotton material Drawstring bag', 100)">
                 <img src="assets/images/drawstringbagproduct1.jpg" alt="Cotton material Drawstring bag">
                 <h3>Cotton material</h3>
@@ -140,7 +136,6 @@
                 </ul>
                 <button class="buy-5">Buy now</button>
             </div>
-    
             <div class="content" onclick="openModal('assets/images/drawstringbagproduct4.jpg', 'Ankara / Ethnic Design Drawstring bag', 100)">
                 <img src="assets/images/drawstringbagproduct4.jpg" alt="Ankara / Ethnic Design Drawstring bag">
                 <h3>Ankara / Ethnic Design</h3>
@@ -158,16 +153,17 @@
         </div>
     </div>
     <div id="modal" class="modal">
-      <div class="modal-content">
-          <span class="close" onclick="closeModal()">&times;</span>
-          <img id="modal-image" src="" alt="Product Image">
-          <h3 id="modal-title">Product Title</h3>
-          <p id="modal-price">KES 0.00</p>
-          <label for="quantity">Quantity:</label>
-          <input type="number" id="quantity" name="quantity" min="1" value="1">
-          <button class="checkout-button">Checkout</button>
-      </div>
-  </div>    
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Product Image">
+            <h3 id="modal-title">Product Title</h3>
+            <p id="modal-price">KES 0.00</p>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1">
+            <button class="checkout-button">Checkout</button>
+        </div>
+    </div>
+        
   </div>
   <!-- Content for Page 3 (About us Page) -->
   <div id="page3" class="page">
@@ -212,9 +208,9 @@
         <div class="container">
           <p>&copy; 2024 · Drawstring Enterprises · All Rights Reserved.</p>
           <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/drawstringbagskenya/" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/DrawstringbagsK" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company-beta/13256656/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </footer>
