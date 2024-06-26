@@ -27,7 +27,7 @@ function sendMessage() {
     chatBox.innerHTML += "<div class='chat-message user-message'><div class='message-text'><p>" + userInput + "</p></div></div>";
     // Simulate bot response
     setTimeout(function() {
-      chatBox.innerHTML += "<div class='chat-message bot-message'><img src='assets/images/drawstringschat.png' alt='Chatbot Image' class='chat-message-image'><div class='message-text'><p>Text us on Whatsapp via +25476726878989889</p></div></div>";
+      chatBox.innerHTML += "<div class='chat-message bot-message'><img src='assets/images/drawstringschat.png' alt='Chatbot Image' class='chat-message-image'><div class='message-text'><p>Text us on Whatsapp via +254706890007</p></div></div>";
       chatBox.scrollTop = chatBox.scrollHeight;
     }, 500);
     document.getElementById("user-input").value = "";
